@@ -5,15 +5,10 @@ from django.contrib import admin
 from django.contrib.auth.models import User
 
 
-class Survey(models.Model):
-    """Модель для создания опросов на сайте"""
-    survey_text = models.CharField(max_length=100)
-    author = models.ForeignKey(User, on_delete=models.CASCADE)
-
 class Question(models.Model):
     question_text = models.CharField(max_length=200)
     pub_date = models.DateTimeField('date published')
-    survey  = models.ForeignKey(Survey, on_delete=models.CASCADE)
+
     @admin.display(
         boolean=True,
         ordering="pub_date",
@@ -35,3 +30,11 @@ class Choice(models.Model):
     def __str__(self) -> str:
         return self.choice_text
 
+class Survey(models.Model):
+    """Модель для создания опросов на сайте"""
+    survey_text = models.CharField(max_length=100)
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    polls_list = Question.objects.all()
+    
+    def showSurvey(self, question_id):
+        polls = Question.objects.get(pk=question_id)

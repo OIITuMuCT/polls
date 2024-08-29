@@ -3,8 +3,17 @@
 {% comment %} <link rel="stylesheet" href="{% static "polls/style.css" %}"> {% endcomment %}
 
 <body>
-
-
+<h2>Опрос {{ polls_list.id }} </h2><p>
+    {% for poll in polls_list  %}
+    <li>
+        {{ polls_list }}
+    </li>
+    {% endfor %}
+    {{ polls_list }}
+</p>
+<li>
+    
+</li>
 {% if latest_question_list  %}
 <ul>
     {% for question in latest_question_list  %}
