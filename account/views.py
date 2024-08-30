@@ -1,10 +1,10 @@
 from django.shortcuts import render
-
-# Create your views here.
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.contrib.auth import authenticate, login
 from .forms import LoginForm
+
+
 
 def user_login(request):
     # Если метод запроса Пост
@@ -17,7 +17,7 @@ def user_login(request):
             user = authenticate(request,
                                 username=cd['username'],
                                 password=cd['password'])
-            if user is None:
+            if user is not None:
                 if user.is_active:
                     login(request, user)
                     return HttpResponse('Authenticated successfully')
@@ -25,6 +25,6 @@ def user_login(request):
                     return HttpResponse('Disabled account')
             else:
                 return HttpResponse('Invalid login')
-        else:
-            form = LoginForm()
-        return render(request, 'account/login.html', {'form': form})
+    else:
+        form = LoginForm()
+    return render(request, 'account/login.html', {'form': form})
