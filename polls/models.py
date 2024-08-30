@@ -38,3 +38,4 @@ class Survey(models.Model):
     
     def showSurvey(self, question_id):
         polls = Question.objects.get(pk=question_id)
+        return self.pk
