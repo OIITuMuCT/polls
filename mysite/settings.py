@@ -63,8 +63,8 @@ ROOT_URLCONF = 'mysite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        # 'DIRS': [],
-        'DIRS': [BASE_DIR / "templates"],        
+        'DIRS': [],
+        # 'DIRS': [BASE_DIR / "templates"],        
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -133,8 +133,8 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # login/redirect
-LOGIN_REDIRECT_URL = 'dashboard'
+LOGIN_REDIRECT_URL = 'account:dashboard'
 
-LOGIN_URL = 'login'
+LOGIN_URL = 'account:login'
 
-LOGOUT_URL = 'logout'
+LOGOUT_URL = 'account:logout'
