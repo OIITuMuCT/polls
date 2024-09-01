@@ -5,7 +5,7 @@ from .models import Choice, Question
 class ChoiceInline(admin.TabularInline):
     # StaledInline отображает choice на странице в виде трех строк
     model = Choice
-    extra = 3
+    extra = 4
 
 
 class QuestionAdmin(admin.ModelAdmin):
