@@ -27,11 +27,15 @@ SECRET_KEY = 'django-insecure-_(f&2t_+#ppr+tlkz=_7i@!^nn#647ontpwwgeldy&+^#weuxb
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [    
+    'mysite.com',
+    'localhost', 
+    '127.0.0.1'
+]
 
 INTERNAL_IPS = [
     '127.0.0.1',
-    'mysite.com',
+    
 ]
 
 # Application definition
@@ -48,6 +52,9 @@ INSTALLED_APPS = [
     'polls.apps.PollsConfig',
     'taggit',
     'debug_toolbar',
+
+    'social_django',
+    'django_extensions',
 ]
 
 MIDDLEWARE = [
@@ -60,7 +67,11 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     "debug_toolbar.middleware.DebugToolbarMiddleware",
 ]
-
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'account.authentication.EmailAuthBackend',
+    'social_core.backends.facebook.FacebookOAuth2',
+] 
 ROOT_URLCONF = 'mysite.urls'
 
 TEMPLATES = [
@@ -93,10 +104,7 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-AUTHENTICATION_BACKENDS = [
-    'django.contrib.auth.backends.ModelBackend',
-    'account.authentication.EmailAuthBackend',
-] 
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
