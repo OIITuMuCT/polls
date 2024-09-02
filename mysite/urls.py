@@ -25,6 +25,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('account/', include("account.urls")),
     path('polls/', include("polls.urls")),
+    
 ]
 
 if settings.DEBUG:

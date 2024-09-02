@@ -42,6 +42,8 @@ INTERNAL_IPS = [
 
 INSTALLED_APPS = [
     'account.apps.AccountConfig',
+    # 'employee.apps.EmployeeConfig',
+    'employee_learning',
     
     'django.contrib.admin',
     'django.contrib.auth',
@@ -53,10 +55,10 @@ INSTALLED_APPS = [
     'taggit',
     'debug_toolbar',
     # реализовать аутентификацию
-    'oauth2_provider',
-    'rest_framework',
+    # 'oauth2_provider',
+    # 'rest_framework',
     
-    'social_django',
+    # 'social_django',
     'django_extensions',
 ]
 
