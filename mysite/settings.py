@@ -52,7 +52,10 @@ INSTALLED_APPS = [
     'polls.apps.PollsConfig',
     'taggit',
     'debug_toolbar',
-
+    # реализовать аутентификацию
+    'oauth2_provider',
+    'rest_framework',
+    
     'social_django',
     'django_extensions',
 ]
