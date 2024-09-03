@@ -1,5 +1,6 @@
 import datetime
 from django.db import models
+from django.urls import reverse
 
 class Division(models.Model):
     div_name = models.CharField(max_length=25)

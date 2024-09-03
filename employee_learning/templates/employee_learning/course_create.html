@@ -1,6 +1,6 @@
-{% comment %} <a href="{% url "course_list" %}">List</a>
-<a href="{% url "course_create" %}">Create</a> {% endcomment %}
+{% extends "base.html" %}
 
+{% block body %}
 <h1>CREATE Page</h1>
 
 <form method="post">
@@ -8,3 +8,4 @@
     {% csrf_token %}
     <input type="submit" value="Save">
 </form>
+{% endblock %}

@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from .models import LearningCourse
-from django.urls import reverse_lazy
+from django.urls import reverse_lazy, reverse
 
 
 class CourseList(ListView):
@@ -16,6 +16,13 @@ class CourseDetail(DetailView):
     template_name = 'employee_learning/course_detail.html'
     # извлекает один объект из базы данных модели 
     context_object_name = 'course_object'
+
+
+    def get_success_url(self) :
+        return reverse(
+            "employee_learning:course_detail", 
+            kwargs={"pk": self.object.pk}
+        )
 
 
 class CourseCreate(CreateView):

@@ -1,6 +1,6 @@
 
 <h1>LIST page</h1>
-<a href="{% url "course_detail" %}"></a>
+<a href="#">Detail</a>
 {% for course in object_list %}
 <p>{{ course.title|upper }}</p>
 <p>{{ course.get_level_display }}</p>
