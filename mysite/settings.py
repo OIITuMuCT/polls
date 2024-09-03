@@ -42,7 +42,6 @@ INTERNAL_IPS = [
 
 INSTALLED_APPS = [
     'account.apps.AccountConfig',
-    # 'employee.apps.EmployeeConfig',
     'employee_learning',
     
     'django.contrib.admin',
@@ -80,7 +79,6 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [],
         # 'DIRS': [BASE_DIR / "templates"],
-        # 'DIRS': [os.path.join(BASE_DIR, 'app/templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -164,9 +162,9 @@ PASSWORD_HASHERS = [
 # login/redirect
 LOGIN_REDIRECT_URL = reverse_lazy('account:dashboard')
 
-LOGIN_URL = 'account:login'
+LOGIN_URL = reverse_lazy('account:login')
 
-LOGOUT_URL = 'account:logout'
+LOGOUT_URL = reverse_lazy('account:logout')
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 

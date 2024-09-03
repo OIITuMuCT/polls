@@ -1,0 +1,11 @@
+<h1>DETAIL Page</h1>
+<p>Course title : {{ course_object.title|upper }}</p>
+<p>Level : {{ course_object.get_level_display }}</p>
+
+<p>Assigned Employees : </p>
+
+{% for emp in object.employee.all  %}
+<p>{{ emp.name }} : {{ emp.division }}</p>
+{% endfor %}
+{% comment %} <a href="{% url 'course_update' object.pk %}">Update</a> {% endcomment %}
+{% comment %} <a href="{% url 'course_delete' object.pk %}">Delete</a> {% endcomment %}
