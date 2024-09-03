@@ -18,8 +18,7 @@ urlpatterns = [
     path('', views.dashboard, name='dashboard'),
     path('register/', views.register, name='register'),
     path('edit/', views.edit, name='edit'),
-    path('social-auth/', 
-        include('social_django.urls', namespace='social')),
+
 
     # # URL-адреса для смены пароля
     # path('password-change/',
