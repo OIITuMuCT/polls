@@ -1,4 +1,6 @@
+import datetime
 from django.db import models
+
 
 # Create your models here.
 class Employee(models.Model):
@@ -7,7 +9,10 @@ class Employee(models.Model):
     priority = models.CharField(max_length=1, 
                                 verbose_name="Learning Priorities", 
                                 choices=PRIORITIES, default='M')
-
+    reg_date = models.DateField(default=datetime.date.today, 
+                                              verbose_name="Data registration Date")
+    
+    
     def __str__(self):
         return self.name
 
