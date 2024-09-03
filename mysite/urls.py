@@ -25,12 +25,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('account/', include("account.urls")),
     path('polls/', include("polls.urls")),
-<<<<<<< HEAD
-    
-=======
     path('social-auth/', 
         include('social_django.urls', namespace='social')),
->>>>>>> main
 ]
 
 if settings.DEBUG:
