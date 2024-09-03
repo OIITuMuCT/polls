@@ -42,7 +42,7 @@ INTERNAL_IPS = [
 
 INSTALLED_APPS = [
     'account.apps.AccountConfig',
-    'employee_learning',
+    'employee_learning.apps.EmployeeLearningConfig',
     
     'django.contrib.admin',
     'django.contrib.auth',

@@ -1,5 +1,4 @@
 from django.urls import path
-from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView 
 from .views import CourseList, CourseDetail, CourseCreate, CourseUpdate,  CourseDelete 
 
 app_name='employee_learning'
