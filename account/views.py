@@ -8,6 +8,7 @@ from django.contrib.auth.decorators import login_required
 from .models import Profile
 from django.contrib import messages
 
+from django.views.generic import TemplateView
 
 
 def user_login(request):
@@ -89,3 +90,12 @@ def edit(request):
                   'account/edit.html',
                 {'user_form': user_form,
                  'profile_form': profile_form})
+    
+
+
+def function_view_test(request):
+    return HttpResponse('<h1>Hello world! Function-based ViewTest</h1>')
+
+
+class ClassViewTest(TemplateView):
+    template_name = 'account/test.html'

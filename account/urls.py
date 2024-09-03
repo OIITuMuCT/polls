@@ -10,6 +10,8 @@ urlpatterns = [
 
     # login/logout urls
     # url-адреса входа и выхода
+    path('test-function/', views.function_view_test),
+    path('test-class/', views.ClassViewTest.as_view()),
     path('login/', auth_views.LoginView.as_view(), name='login'),
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),
     path('', include('django.contrib.auth.urls')),
