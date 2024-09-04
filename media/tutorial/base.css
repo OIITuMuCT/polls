@@ -10,21 +10,20 @@ body {
 /* my settings block */
 .container {
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     position: fixed;
-    min-height: 100vh;
+    /* min-height: 100vh; */
     background-color: #c9bc30; /* Цвет фона */
-    border-radius: 15;
     border-color: #0ac33e;
+    border: 2px solid blueviolet;
 
 }
 
 #footer {
 position: absolute;
-border: solid blueviolet;
+border: 2px solid blueviolet;
 padding: 10px;
 margin: 10px;
-
 bottom: 0;
 
 }
@@ -62,9 +61,9 @@ ol {
 
 #header {
     padding:10px 100px;
-    font-size:14px;
+    font-size:px;
     background:#12c064;
-    color:#fff;
+    color:#b80b0b;
     border-bottom:4px solid #1cdf78;
     overflow:auto;
 }
