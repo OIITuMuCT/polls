@@ -18,11 +18,11 @@ class CourseDetail(DetailView):
     context_object_name = 'course_object'
 
 
-    def get_success_url(self) :
-        return reverse(
-            "employee_learning:course_detail", 
-            kwargs={"pk": self.object.pk}
-        )
+    # def get_success_url(self) :
+    #     return reverse(
+    #         "employee_learning:course_detail", 
+    #         kwargs={"pk": self.object.pk}
+    #     )
 
 
 class CourseCreate(CreateView):

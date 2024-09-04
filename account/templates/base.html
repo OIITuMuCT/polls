@@ -7,21 +7,27 @@
 </head>
 <body>
 <div id="header">
-<span class="logo">Polls</span>
 {% if request.user.is_authenticated %}
 <ul class="menu">
+    <li>
+        <img src="/media/logo/logopolls.png" weight="100" height="100" alt="Polls">
+    </li>
 <li {% if section == "dashboard" %}class="selected"{% endif %}>
 <a href="{% url "account:dashboard" %}">My dashboard</a>
 </li>
 <li {% if section == "mypolls" %}class="selected"{% endif %}>
     <a href="{% url 'polls:index' %}">My polls</a>
 </li>
+<li {% if section == "сourses" %}class="selected"{% endif %}>
+    <a href="http://127.0.0.1:8000/employee-learning/course-list/">Courses</a>
+</li>
 <li {% if section == "images" %}class="selected"{% endif %}>
 <a href="#">Images</a>
 </li>
-<li {% if section == "people" %}class="selected"{% endif %}>
-<a href="#">People</a>
+<li {% if section == "detail" %}class="selected"{% endif %}>
+<a href="#">Details</a>
 </li>
+
 </ul>
 {% endif %}
 <span class="user">
@@ -35,6 +41,7 @@ Hello {{ request.user.first_name|default:request.user.username }},
 <a href="{% url "account:login" %}">Log-in</a>
 {% endif %}
 </span>
+</div>
 </div>
 {% if messages %}
 <ul class="messages">
@@ -51,4 +58,19 @@ Hello {{ request.user.first_name|default:request.user.username }},
 {% endblock %}
 </div>
 </body>
+{% block footer %}
+<div class="container">
+<footer class="footer" type="content">
+<hr>
+    <div  style="columns: 2;">
+                <img src="/media/logo/logopolls.png" width="50" alt="Polls">
+    <p>Design & Development</p>
+    {% comment %} <h5 style="text-align: center;">Disign & Development</h5> {% endcomment %}
+    </div>
+    
+
+</footer>
+
+</div><hr>
+{% endblock %}
 </html>

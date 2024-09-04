@@ -1,6 +1,9 @@
+{% extends "base.html" %}
 {% load static %}
 
 {% comment %} <link rel="stylesheet" href="{% static "polls/style.css" %}"> {% endcomment %}
+{% block title %}My polls{% endblock %}
+{% block content %}
 
 <body>
 <h2>Опрос {{ survey.polls_list }} </h2><p>
@@ -26,3 +29,4 @@
 <p>No polls are available.</p>
 {% endif %}
 </body>
+{% endblock %}

@@ -1,6 +1,7 @@
 from django.urls import include, path
 from django.contrib.auth import views as auth_views
 from . import views
+from employee_learning.views import CourseDetail
 
 
 app_name = "account"
@@ -18,7 +19,9 @@ urlpatterns = [
     path('', views.dashboard, name='dashboard'),
     path('register/', views.register, name='register'),
     path('edit/', views.edit, name='edit'),
-
+    # path('course-detail/<int:pk>/', CourseDetail.as_view(), name='course_detail'),
+    
+    
 
     # # URL-адреса для смены пароля
     # path('password-change/',

@@ -1,0 +1,30 @@
+/* Блочная модель */
+head {
+  background-color: bisque;
+}
+header {
+  background-color: bisque;
+}
+body {
+    color: aquamarine;
+    /* background: #6c9dcf; Цвет фона */
+    padding: 50px; /* Поля */
+    border: 2px solid #ff761a; /* Параметры рамки */
+    margin: 10px; /* Отступы */
+}
+.block {
+    background: #c9bc30; /* Цвет фона */
+    padding: 20px; /* Поля вокруг текста */
+    border: 2px solid #EF8031; /* Параметры рамки */
+    margin: 10px; /* Отступы */
+  }
+.footer__Container {
+  background-color: #2f56d9;
+  padding: 50px;
+  border: 2px solid cornflowerblue;
+  margin: 5px;
+}
+.navbar {
+  background-color: green;
+  padding: 20px;
+}
