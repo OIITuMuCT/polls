@@ -45,7 +45,7 @@ CRISPY_TEMPLATE_PACK = "bootstrap5"
 # Application definition
 
 INSTALLED_APPS = [
-    'account.apps.AccountConfig',
+    'acc.apps.AccountConfig',
     'employee_learning.apps.EmployeeLearningConfig',
     
     'django.contrib.admin',
@@ -224,6 +224,14 @@ AUTHENTICATION_BACKENDS = [
 LOGIN_REDIRECT_URL ='/'
 ACCOUNT_LOGOUT_REDIRECT_URL ='/accounts/login/'
 # ACCOUNT_LOGOUT_ON_GET = True
+
+ACCOUNT_AUTHENTICATION_METHOD = "email"
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_EMAIL_VERIFICATION = "none"
+ACCOUNT_USERNAME_REQUIRED = False
+ACCOUNT_UNIQUE_USERNAME = False
+#Add the following when you are using custom user model
+#ACCOUNT_USER_MODEL_USERNAME_FIELD = None
 
 
 # SOCIAL_AUTH_JSONFIELD_ENABLED = True
