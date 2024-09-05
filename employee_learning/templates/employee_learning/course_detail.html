@@ -9,7 +9,5 @@
 {% endfor %}
 
 
-<a href="{% url 'employee:course_update'
-object.pk%}">Update</a>
-<a href="{% url 'course_delete'
-object.pk%}">Delete</a>
+<a href="{% url 'employee_learning:course_update' object.pk%}">Update</a>
+<a href="{% url 'employee_learning:course_delete' object.pk%}">Delete</a>

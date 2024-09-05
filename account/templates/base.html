@@ -21,15 +21,17 @@
     <a href="{% url 'polls:index' %}">My polls</a>
 </li>
 <li {% if section == "сourses" %}class="selected"{% endif %}>
-    <a href="http://127.0.0.1:8000/employee-learning/course-list/">Courses</a>
+    <a href="{% url "employee_learning:course_list" %}">Courses</a>
 </li>
 <li {% if section == "images" %}class="selected"{% endif %}>
 <a href="#">Images</a>
 </li>
-<li {% if section == "detail" %}class="selected"{% endif %}>
-<a href="#">Details</a>
+<li {% if section == "create" %}class="selected"{% endif %}>
+<a href="{% url "employee_learning:course_create" %}">Create page</a>
 </li>
-
+<li {% if section == "detail" %}class="selected"{% endif %}>
+    <a href="#">Details</a>
+    </li>
 </ul>
 {% endif %}
 <span class="user">

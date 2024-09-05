@@ -37,7 +37,10 @@ INTERNAL_IPS = [
     '127.0.0.1',
     
 ]
+# TEMPLATES_DIR = BASE_DIR / 'templates'
 
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+CRISPY_TEMPLATE_PACK = "bootstrap5"
 # Application definition
 
 INSTALLED_APPS = [
@@ -51,8 +54,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'polls.apps.PollsConfig',
+    
     'taggit',
     'debug_toolbar',
+    # приложения для работы с формами
+    'crispy_forms',
+    'crispy_bootstrap5',
     # реализовать аутентификацию
     # 'oauth2_provider',
     # 'rest_framework',
@@ -77,8 +84,8 @@ ROOT_URLCONF = 'mysite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
-        # 'DIRS': [BASE_DIR / "templates"],
+        # 'DIRS': [],
+        'DIRS': [BASE_DIR / "templates"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

@@ -126,7 +126,7 @@ ol {
 }
 
 /* forms */
-form {
+/* form {
     overflow:auto;
 }
 
@@ -207,7 +207,7 @@ ul.messages li a.close {
     border:0;
     box-shadow:none;
     text-shadow:none;
-}
+} */
 
 .login-form {
     float: center;
