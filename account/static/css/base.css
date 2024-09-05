@@ -3,7 +3,7 @@
 body {
     /* display: inline; */
     margin: 0px;;
-    padding: 100px;;
+    padding: 10px;
     font-family:helvetica, sans-serif;
 
 }
@@ -11,23 +11,31 @@ body {
 .container {
     display: flex;
     flex-direction: column;
-    position: fixed;
-    min-height: 100vh;
-    background-color: #c9bc30; /* Цвет фона */
+    /* position: absolute; */
     border-radius: 15;
     border-color: #0ac33e;
-    border: 2px solid #a30029;
+    /* border: 2px solid #a30029; */
 
 }
 
 #footer {
-position: absolute;
-border: solid blueviolet;
+/* border: 2px solid rgb(27, 2, 49); */
 padding: 10px;
 margin: 10px;
-
 bottom: 0;
+}
+#dno {
+    /* display: flex; */
+    display: flex;
+    background-image:  url(/media/logo/logopolls.png);
+    background-size: 50px;
+    background-position: 10px;
+    background-repeat: no-repeat;
+    justify-content: space-between;
+    
 
+    /* text-align: center; */
+    
 }
 /* end my settings block */
 p {
@@ -35,13 +43,13 @@ p {
 }
 
 a {
-    color:#c01260;
+    color:#12c023;
     text-decoration:none;
 }
 
 a:hover {
-    /* color:#00a74f; */
-    color: #a81f00;
+    color:#00a74f;
+    /* color: #a81f00; */
 
 }
 
@@ -62,11 +70,18 @@ ol {
 }
 
 #header {
+    position: ;
     padding:10px 100px;
     font-size:14px;
     background:#12c064;
+    background-image:  url(/media/logo/logopolls.png);
+    background-size: 50px;
+    background-position: 10px;
+    background-repeat: no-repeat;
+    /* line-height: 50px; */
+    text-align: center;
     color:#fff;
-    border-bottom:4px solid #1cdf78;
+    border-bottom:4px solid #4adf1c;
     overflow:auto;
 }
 
@@ -74,7 +89,7 @@ ol {
     font-family: 'Muli', sans-serif;
     float:left;
     color:#f3f7cc;
-    font-size:20px;
+    font-size:14px;
     margin-right:10%;
 }
 
@@ -82,7 +97,7 @@ ol {
     list-style:none;
     float:left;
     margin:0;
-    padding:0;
+    padding:10;
 }
 #header ul.menu li {
     float:left;

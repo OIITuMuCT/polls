@@ -9,9 +9,11 @@
 <div id="header">
 {% if request.user.is_authenticated %}
 <ul class="menu">
-    <li>
-        <img src="/media/logo/logopolls.png" weight="100" height="100" alt="Polls">
-    </li>
+    {% comment %} <li>
+        <a href="{% url 'polls:index' %}" >
+        <img style="padding: auto;" src="/media/logo/logopolls.png" weight="50" height="50" alt="Polls">
+        Polls</a>
+    </li> {% endcomment %}
 <li {% if section == "dashboard" %}class="selected"{% endif %}>
 <a href="{% url "account:dashboard" %}">My dashboard</a>
 </li>
@@ -60,17 +62,12 @@ Hello {{ request.user.first_name|default:request.user.username }},
 </body>
 {% block footer %}
 <div class="container">
-<footer class="footer" type="content">
 <hr>
-    <div  style="columns: 2;">
-                <img src="/media/logo/logopolls.png" width="50" alt="Polls">
-    <p>Design & Development</p>
+    <div id="dno"  style="background:#12c064">
+                <img style="padding: 10px 5px;" src="/media/logo/logopolls.png" width="50" alt="Polls">
+    <p style=" padding: 5px; ">Design & Development</p>
     {% comment %} <h5 style="text-align: center;">Disign & Development</h5> {% endcomment %}
     </div>
-    
-
-</footer>
-
-</div><hr>
+</div>
 {% endblock %}
 </html>
