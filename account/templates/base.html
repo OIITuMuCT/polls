@@ -30,7 +30,16 @@
 <a href="{% url "employee_learning:course_create" %}">Create page</a>
 </li>
 <li {% if section == "detail" %}class="selected"{% endif %}>
-    <a href="#">Details</a>
+    <a href="#">Detail</a>
+    {% comment %} <a href="{% url "employee_learning:course_detail" course_object.pk??? pk=object.id %}">Details</a> {% endcomment %}
+    </li>
+    <li {% if section == "update" %}class="selected"{% endif %}>
+        <a href="#">Update</a>
+        {% comment %} <a href="{% url "employee_learning:course_update" object.pk %}">Update</a> {% endcomment %}
+    </li>
+    <li {% if section == "delite" %}class="selected"{% endif %}>
+        <a href="#">Delete</a>
+        {% comment %} <a href="{% url "employee_learning:course_update" object.pk %}">Update</a> {% endcomment %}
     </li>
 </ul>
 {% endif %}
@@ -58,6 +67,8 @@ Hello {{ request.user.first_name|default:request.user.username }},
 </ul>
 {% endif %}
 <div id="content">
+<a href="{% url 'employee_learning:course_list'%}">List</a>
+<a href="{% url 'employee_learning:course_create'%}">Create</a>
 {% block content %}
 {% endblock %}
 </div>
@@ -72,4 +83,5 @@ Hello {{ request.user.first_name|default:request.user.username }},
     </div>
 </div>
 {% endblock %}
+<h6>2023 Employee Learning</h6>
 </html>

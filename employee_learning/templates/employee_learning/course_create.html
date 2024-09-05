@@ -1,9 +1,10 @@
 {% extends "base.html" %}
 {% load crispy_forms_tags %}
 {% block content %}
+
+{% comment %} <a href="{% url 'employee_learning:course_list' %}">List</a>
+<a href="{% url 'employee_learning:course_create' %}">Create</a> {% endcomment %}
 <div class="container w-50" style="min-width: 300px; max-width: 500px;">
-
-
 <h1 class="m-5 text-center">CREATE Page</h1>
 
 <form method="post">{% csrf_token %}

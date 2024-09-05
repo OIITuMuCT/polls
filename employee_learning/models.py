@@ -33,6 +33,9 @@ class PersonalInfo(models.Model):
     address = models.CharField(max_length=50)
 
 
+    def __str__(self):
+        return self.name #, self.tel, self.address
+
 class LearningCourse(models.Model):
     LEVEL = [('B', 'Basic'), ('I', 'Intermediate'), ('A', 'Advanced'),]
     title = models.CharField(max_length=50, unique=True)

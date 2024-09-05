@@ -3,11 +3,13 @@
 {% block title %}<h1>LIST page</h1>{% endblock %}
 {% block content %}
 <h1>LIST page</h1>
-
+{% comment %} <a href="{% url "employee_learning:detail_course"  %}">Detail</a> {% endcomment %}
 {% for course in object_list %}
 <p>{{ course.title|upper }}</p>
 <p>{{ course.get_level_display }}</p>
-
+<a href="{% url 'employee_learning:course_detail' course.pk %}">Go
+    Detail</a>
 <hr>
 {% endfor %}
+
 {% endblock %}
