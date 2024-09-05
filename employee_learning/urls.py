@@ -1,10 +1,11 @@
 from django.urls import path, reverse
 from .views import CourseList, CourseDetail, CourseCreate, CourseUpdate,  CourseDelete 
-
+from .views import Index
 app_name='employee_learning'
 
 urlpatterns = [
     #  path('kebab-case/' , PascalCase.as_view() ,  name="'snake_case')
+    path('', Index.as_view(), name='index'),
     path('course-list/', CourseList.as_view(), name='course_list'),
     path('course-detail/<int:pk>/', CourseDetail.as_view(), name='course_detail'),
     path('course-create/', CourseCreate.as_view(), name='course_create'),

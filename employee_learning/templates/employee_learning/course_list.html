@@ -1,9 +1,10 @@
 {% extends "base.html" %}
 
 {% block title %}<h1>LIST page</h1>{% endblock %}
+
 {% block content %}
-<h1>LIST page</h1>
-{% comment %} <a href="{% url "employee_learning:detail_course"  %}">Detail</a> {% endcomment %}
+<h1 class="text-center mt-5">LIST page</h1>
+<p class="text-muted test-center mb-5">As of {{ today }}</p>
 {% for course in object_list %}
 <p>{{ course.title|upper }}</p>
 <p>{{ course.get_level_display }}</p>

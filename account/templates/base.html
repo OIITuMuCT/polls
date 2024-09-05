@@ -2,10 +2,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>{% block title %}{% endblock %}</title>
+<title>{% block title %}Employee Learning{% endblock %}</title>
 <link href="{% static "css/base.css" %}" rel="stylesheet">
+{% include "css_link.html" %}
 </head>
 <body>
+    {% include "navbar.html" %}
 <div id="header">
 {% if request.user.is_authenticated %}
 <ul class="menu">
