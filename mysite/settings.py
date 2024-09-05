@@ -55,6 +55,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'polls.apps.PollsConfig',
+    # allauth lib
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount'
     
     'taggit',
     'debug_toolbar',
@@ -167,12 +172,13 @@ PASSWORD_HASHERS = [
 
 # from django.urls import reverse_lazy
 # LOGIN_REDIRECT_URL = reverse_lazy('')
+# Used for login django-social lib
 # login/redirect
-LOGIN_REDIRECT_URL = reverse_lazy('account:dashboard')
+# LOGIN_REDIRECT_URL = reverse_lazy('account:dashboard')
 
-LOGIN_URL = reverse_lazy('account:login')
+# LOGIN_URL = reverse_lazy('account:login')
 
-LOGOUT_URL = reverse_lazy('account:logout')
+# LOGOUT_URL = reverse_lazy('account:logout')
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
@@ -189,25 +195,36 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = config('DEFAULT_FROM_EMAIL')
 
-SOCIAL_AUTH_PIPELINE = [
-    'social_core.pipeline.social_auth.social_details',
-    'social_core.pipeline.social_auth.social_uid',
-    'social_core.pipeline.social_auth.auth_allowed',
-    'social_core.pipeline.social_auth.social_user',
-    'social_core.pipeline.user.get_username',
-    'social_core.pipeline.user.create_user',
-    'account.authentication.create_profile',
-    'social_core.pipeline.social_auth.associate_user',
-    'social_core.pipeline.social_auth.load_extra_data',
-    'social_core.pipeline.user.user_details',
-]
+# SOCIAL_AUTH_PIPELINE = [
+#     'social_core.pipeline.social_auth.social_details',
+#     'social_core.pipeline.social_auth.social_uid',
+#     'social_core.pipeline.social_auth.auth_allowed',
+#     'social_core.pipeline.social_auth.social_user',
+#     'social_core.pipeline.user.get_username',
+#     'social_core.pipeline.user.create_user',
+#     'account.authentication.create_profile',
+#     'social_core.pipeline.social_auth.associate_user',
+#     'social_core.pipeline.social_auth.load_extra_data',
+#     'social_core.pipeline.user.user_details',
+# ]
+### django-allauth settings ###
+SITE_ID = 1
 
 AUTHENTICATION_BACKENDS = [
-    'social_core.backends.github.GithubOAuth2',
-    'social_core.backends.vk.VKOAuth2',
+    # Needed to login by username in Django admin, regardless of allauth
+    # 'social_core.backends.github.GithubOAuth2',
+    # 'social_core.backends.vk.VKOAuth2',
     'django.contrib.auth.backends.ModelBackend',
+    # allauth specific authentication methods, such as login by e-mail
+    'allauth.account.auth_backends.AuthenticationBackend',
     'account.authentication.EmailAuthBackend',
+    
 ]
+# LOGIN and LOGUT Redirection
+LOGIN_REDIRECT_URL ='/'
+ACCOUNT_LOGOUT_REDIRECT_URL ='/accounts/login/'
+# ACCOUNT_LOGOUT_ON_GET = True
+
 
 # SOCIAL_AUTH_JSONFIELD_ENABLED = True
 
