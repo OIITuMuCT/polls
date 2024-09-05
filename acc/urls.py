@@ -4,7 +4,7 @@ from . import views
 from employee_learning.views import CourseDetail
 
 
-app_name = "account"
+app_name = "acc"
 urlpatterns = [
     # previous login url
     # path('login/', views.user_login, name="login"),

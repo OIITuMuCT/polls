@@ -23,13 +23,14 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('accounts/', include('allauth.urls')),
-    path('account/', include("account.urls")),
+    
+    path('acc/', include("acc.urls")),
     path('polls/', include("polls.urls")),
     # path('employee-learning/', include('employee_learning.urls')),
     path('', include('employee_learning.urls')),
-    path('social-auth/', 
-        include('social_django.urls', namespace='social')),
+    # path('social-auth/', 
+    #     include('social_django.urls', namespace='social')),
+    path('accounts/', include('allauth.urls')),
 ]
 
 if settings.DEBUG:

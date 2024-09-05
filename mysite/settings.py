@@ -59,7 +59,7 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'allauth',
     'allauth.account',
-    'allauth.socialaccount'
+    'allauth.socialaccount',
     
     'taggit',
     'debug_toolbar',
@@ -75,6 +75,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'allauth.account.middleware.AccountMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -90,8 +91,8 @@ ROOT_URLCONF = 'mysite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        # 'DIRS': [],
-        'DIRS': [BASE_DIR / "templates"],
+        'DIRS': [],
+        # 'DIRS': [BASE_DIR / "templates"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -180,7 +181,7 @@ PASSWORD_HASHERS = [
 
 # LOGOUT_URL = reverse_lazy('account:logout')
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
 
 # media files
 MEDIA_URL = 'media/'
@@ -195,18 +196,18 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = config('DEFAULT_FROM_EMAIL')
 
-# SOCIAL_AUTH_PIPELINE = [
-#     'social_core.pipeline.social_auth.social_details',
-#     'social_core.pipeline.social_auth.social_uid',
-#     'social_core.pipeline.social_auth.auth_allowed',
-#     'social_core.pipeline.social_auth.social_user',
-#     'social_core.pipeline.user.get_username',
-#     'social_core.pipeline.user.create_user',
-#     'account.authentication.create_profile',
-#     'social_core.pipeline.social_auth.associate_user',
-#     'social_core.pipeline.social_auth.load_extra_data',
-#     'social_core.pipeline.user.user_details',
-# ]
+SOCIAL_AUTH_PIPELINE = [
+    'social_core.pipeline.social_auth.social_details',
+    'social_core.pipeline.social_auth.social_uid',
+    'social_core.pipeline.social_auth.auth_allowed',
+    'social_core.pipeline.social_auth.social_user',
+    'social_core.pipeline.user.get_username',
+    'social_core.pipeline.user.create_user',
+    'account.authentication.create_profile',
+    'social_core.pipeline.social_auth.associate_user',
+    'social_core.pipeline.social_auth.load_extra_data',
+    'social_core.pipeline.user.user_details',
+]
 ### django-allauth settings ###
 SITE_ID = 1
 
@@ -221,15 +222,17 @@ AUTHENTICATION_BACKENDS = [
     
 ]
 # LOGIN and LOGUT Redirection
-LOGIN_REDIRECT_URL ='/'
+LOGIN_REDIRECT_URL ='/employee-learning/course-list/'
 ACCOUNT_LOGOUT_REDIRECT_URL ='/accounts/login/'
-# ACCOUNT_LOGOUT_ON_GET = True
+ACCOUNT_LOGOUT_ON_GET = True
 
 ACCOUNT_AUTHENTICATION_METHOD = "email"
 ACCOUNT_EMAIL_REQUIRED = True
-ACCOUNT_EMAIL_VERIFICATION = "none"
+ACCOUNT_EMAIL_VERIFICATION = "mandatory"
 ACCOUNT_USERNAME_REQUIRED = False
 ACCOUNT_UNIQUE_USERNAME = False
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 #Add the following when you are using custom user model
 #ACCOUNT_USER_MODEL_USERNAME_FIELD = None
 
@@ -238,15 +241,15 @@ ACCOUNT_UNIQUE_USERNAME = False
 
 # Authenticate with GitHub
 
-SOCIAL_AUTH_GITHUB_KEY = config('SOCIAL_AUTH_GITHUB_KEY')
-SOCIAL_AUTH_GITHUB_SECRET = config('SOCIAL_AUTH_GITHUB_SECRET')
+# SOCIAL_AUTH_GITHUB_KEY = config('SOCIAL_AUTH_GITHUB_KEY')
+# SOCIAL_AUTH_GITHUB_SECRET = config('SOCIAL_AUTH_GITHUB_SECRET')
 
-# SOCIAL_AUTH_GITHUB_SCOPE = ['email']
+# # SOCIAL_AUTH_GITHUB_SCOPE = ['email']
 
 
-# Authenticate with VK
-SOCIAL_AUTH_VK_OAUTH2_KEY = config('SOCIAL_AUTH_VK_OAUTH2_KEY')
-SOCIAL_AUTH_VK_OAUTH2_SECRET = config('SOCIAL_AUTH_VK_OAUTH2_SECRET')
+# # Authenticate with VK
+# SOCIAL_AUTH_VK_OAUTH2_KEY = config('SOCIAL_AUTH_VK_OAUTH2_KEY')
+# SOCIAL_AUTH_VK_OAUTH2_SECRET = config('SOCIAL_AUTH_VK_OAUTH2_SECRET')
 
 # SOCIAL_AUTH_VK_OAUTH2_SCOPE = ['email']
 
