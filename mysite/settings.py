@@ -56,10 +56,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'polls.apps.PollsConfig',
     # allauth lib
-    'django.contrib.sites',
-    'allauth',
-    'allauth.account',
-    'allauth.socialaccount'
+    # 'django.contrib.sites',
+    # 'allauth',
+    # 'allauth.account',
+    # 'allauth.socialaccount'
     
     'taggit',
     'debug_toolbar',
@@ -90,8 +90,8 @@ ROOT_URLCONF = 'mysite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        # 'DIRS': [],
-        'DIRS': [BASE_DIR / "templates"],
+        'DIRS': [],
+        # 'DIRS': [BASE_DIR / "templates"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -174,11 +174,11 @@ PASSWORD_HASHERS = [
 # LOGIN_REDIRECT_URL = reverse_lazy('')
 # Used for login django-social lib
 # login/redirect
-# LOGIN_REDIRECT_URL = reverse_lazy('account:dashboard')
+LOGIN_REDIRECT_URL = reverse_lazy('account:dashboard')
 
-# LOGIN_URL = reverse_lazy('account:login')
+LOGIN_URL = reverse_lazy('account:login')
 
-# LOGOUT_URL = reverse_lazy('account:logout')
+LOGOUT_URL = reverse_lazy('account:logout')
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
@@ -216,13 +216,13 @@ AUTHENTICATION_BACKENDS = [
     # 'social_core.backends.vk.VKOAuth2',
     'django.contrib.auth.backends.ModelBackend',
     # allauth specific authentication methods, such as login by e-mail
-    'allauth.account.auth_backends.AuthenticationBackend',
+    # 'allauth.account.auth_backends.AuthenticationBackend',c
     'account.authentication.EmailAuthBackend',
     
 ]
 # LOGIN and LOGUT Redirection
-LOGIN_REDIRECT_URL ='/'
-ACCOUNT_LOGOUT_REDIRECT_URL ='/accounts/login/'
+# LOGIN_REDIRECT_URL ='/'
+# ACCOUNT_LOGOUT_REDIRECT_URL ='/accounts/login/'
 # ACCOUNT_LOGOUT_ON_GET = True
 
 
