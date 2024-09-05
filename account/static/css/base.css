@@ -231,7 +231,8 @@ ul.messages li a.close {
 .social li.facebook { background:#3b5399; }
 .social li.twitter { background:#00cffa; }
 .social li.google { background:#de1710; }
-.social li.vk { background: blue }
+.social li.vk { background: rgb(30, 30, 184) }
+.social li.github { background: #696b4e;}
 
 
 /* images */

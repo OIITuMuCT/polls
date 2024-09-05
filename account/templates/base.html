@@ -6,6 +6,7 @@
 <link href="{% static "css/base.css" %}" rel="stylesheet">
 </head>
 <body>
+    
 <div id="header">
 {% if request.user.is_authenticated %}
 <ul class="menu">
@@ -65,6 +66,7 @@ Hello {{ request.user.first_name|default:request.user.username }},
     {% comment %} <h5 style="text-align: center;">Disign & Development</h5> {% endcomment %}
     </div>
 </div>
+
 {% endblock %}
 <h6>2023 Employee Learning</h6>
 </html>
